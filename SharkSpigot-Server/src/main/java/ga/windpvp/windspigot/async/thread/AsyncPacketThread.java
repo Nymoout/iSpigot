@@ -78,13 +78,7 @@ public abstract class AsyncPacketThread {
 
     // Queue a packet
     public void addPacket(final Packet<?>  packet, final NetworkManager manager, final GenericFutureListener<? extends Future<? super Void>>[] agenericfuturelistener) {
-        this.packets.add(new Runnable() {
-
-            @Override
-            public void run() {
-                Spigot404Write.writeThenFlush(manager.channel, packet, agenericfuturelistener);
-            }
-        });
+        this.packets.add(() -> Spigot404Write.writeThenFlush(manager.channel, packet, agenericfuturelistener));
     }
 
     public Thread getThread() {

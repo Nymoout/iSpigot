@@ -1401,11 +1401,12 @@ public abstract class World implements IBlockAccess {
 			}
 			this.entityList.add(entity);
 			this.a(entity);
-			
+
+			//TODO remove maxNoDamageTicks
 			// WindSpigot start - configurable entity hit delay
-			if (entity instanceof EntityLiving) {
-				((EntityLiving) entity).maxNoDamageTicks = WindSpigotConfig.hitDelay;
-			}
+//			if (entity instanceof EntityLiving) {
+//				((EntityLiving) entity).maxNoDamageTicks = WindSpigotConfig.hitDelay;
+//			}
 			// WindSpigot end
 			
 			// WindSpigot start - configurable potion speeds

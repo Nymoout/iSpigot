@@ -1088,7 +1088,7 @@ public abstract class MinecraftServer extends ReentrantIAsyncHandler<TasksPerTic
 
 		// WindSpigot start - priority process queue
 		while (!priorityProcessQueue.isEmpty()) {
-			priorityProcessQueue.poll().run();
+				priorityProcessQueue.poll().run();
 		}
 		// WindSpigot end
 		

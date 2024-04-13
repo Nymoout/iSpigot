@@ -226,7 +226,10 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet> {
 				}
 			} else {   
 				// Check if the packet is a knockback packet
-		        if (WindSpigotConfig.asyncKnockback && (packet instanceof PacketPlayOutEntityVelocity || packet instanceof PacketPlayOutPosition || packet instanceof PacketPlayInFlying.PacketPlayInPosition || packet instanceof PacketPlayInFlying)) {
+		        if (WindSpigotConfig.asyncKnockback
+						&& (packet instanceof PacketPlayOutEntityVelocity
+                        || packet instanceof PacketPlayOutPosition
+                        || packet instanceof PacketPlayInFlying)) {
 		        	// Send it with high priority
 		        	WindSpigot.getInstance().getKnockbackThread().addPacket(packet, this, null);
 		            return;
